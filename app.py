@@ -2,14 +2,17 @@ import streamlit as st
 import pickle
 import string
 import nltk
-from nltk.corpus import stopwords
-from nltk.stem.porter import PorterStemmer
 
-ps = PorterStemmer()
+# Try to download; if not possible, catch the error and display a message
+try:
+    nltk.data.find('tokenizers/punkt')
+except LookupError:
+    nltk.download('punkt')
 
-# Ensure NLTK data is downloaded
-nltk.download('punkt', quiet=True)
-nltk.download('stopwords', quiet=True)
+try:
+    nltk.data.find('corpora/stopwords')
+except LookupError:
+    nltk.download('stopwords')
 
 
 # Function to preprocess text
@@ -89,6 +92,7 @@ if st.button("Predict"):
             st.success("✅ Not Spam")
     else:
         st.warning("Please enter a message first!")
+
 
 
 
