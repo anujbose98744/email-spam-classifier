@@ -5,11 +5,11 @@ import nltk
 from nltk.corpus import stopwords
 from nltk.stem.porter import PorterStemmer
 
-# Download required NLTK data
-nltk.download('punkt')
-nltk.download('stopwords')
-
 ps = PorterStemmer()
+
+# Ensure NLTK data is downloaded
+nltk.download('punkt', quiet=True)
+nltk.download('stopwords', quiet=True)
 
 
 # Function to preprocess text
@@ -89,5 +89,6 @@ if st.button("Predict"):
             st.success("✅ Not Spam")
     else:
         st.warning("Please enter a message first!")
+
 
 
