@@ -12,8 +12,6 @@ nltk.download('stopwords')
 ps = PorterStemmer()
 
 
-ps = PorterStemmer()
-
 # Function to preprocess text
 def transform_text(text):
     text = text.lower()
@@ -91,4 +89,5 @@ if st.button("Predict"):
             st.success("✅ Not Spam")
     else:
         st.warning("Please enter a message first!")
+
 
