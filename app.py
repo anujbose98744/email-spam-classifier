@@ -9,7 +9,7 @@ from nltk.stem.porter import PorterStemmer
 ps = PorterStemmer()
 
 # Download NLTK resources
-nltk.download('punkt')
+nltk.download('punkt_tab')
 nltk.download('stopwords')
 
 # --- Page Configuration ---
@@ -155,3 +155,4 @@ if predict_clicked:
             st.success("✅ Not Spam")
     else:
         st.warning("Please enter a message first!")
+
